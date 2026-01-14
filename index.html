@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KEN LINE TRAVEL AND TOURS - Agendamentos de Voos</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Menu Principal com Logo -->
+    <header class="main-header">
+        <div class="header-content">
+            <div class="logo-section">
+                <img src="logo.png" alt="KEN LINE TRAVEL AND TOURS" class="logo-img">
+                <h1 class="company-name">KEN LINE</h1>
+            </div>
+            <nav class="main-nav">
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#inicio" class="nav-link">Início</a></li>
+                    <li><a href="#promocoes" class="nav-link">Promoções</a></li>
+                    <li><a href="#sobre" class="nav-link">Sobre Nós</a></li>
+                    <li><a href="#servicos" class="nav-link">Serviços</a></li>
+                    <li><a href="#contactos" class="nav-link">Contactos</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Seção Início - Galeria de Imagens -->
+    <section id="inicio" class="hero-section">
+        <div class="gallery-container">
+            <div class="gallery-slider" id="gallerySlider">
+                <div class="slide active">
+                    <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1920&h=1080&fit=crop" alt="Avião em voo">
+                    <div class="slide-overlay">
+                        <h2>Explore o Mundo</h2>
+                        <p>Descubra destinos incríveis com a KEN LINE</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1920&h=1080&fit=crop" alt="Paisagem tropical">
+                    <div class="slide-overlay">
+                        <h2>Paraísos Tropicais</h2>
+                        <p>Relaxe em destinos paradisíacos</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?w=1920&h=1080&fit=crop" alt="Avião no aeroporto">
+                    <div class="slide-overlay">
+                        <h2>Viagens Inesquecíveis</h2>
+                        <p>Viva experiências únicas</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&h=1080&fit=crop" alt="Montanhas e paisagem">
+                    <div class="slide-overlay">
+                        <h2>Aventuras Únicas</h2>
+                        <p>Explore novos horizontes</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1920&h=1080&fit=crop" alt="Paisagem noturna">
+                    <div class="slide-overlay">
+                        <h2>Destinos Exóticos</h2>
+                        <p>Descubra lugares extraordinários</p>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-controls">
+                <button class="gallery-btn prev" id="prevBtn" aria-label="Imagem anterior">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="gallery-btn next" id="nextBtn" aria-label="Próxima imagem">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+            <div class="gallery-indicators" id="galleryIndicators"></div>
+        </div>
+    </section>
+
+    <!-- Seção Promoções -->
+    <section id="promocoes" class="promocoes-section">
+        <div class="container">
+            <h2 class="section-title">Promoções Especiais</h2>
+            <p class="section-subtitle">Aproveite nossas ofertas imperdíveis</p>
+            <div class="promocoes-grid" id="promocoesGrid">
+                <!-- Promoções serão carregadas dinamicamente via JavaScript -->
+            </div>
+            <div class="promocoes-actions">
+                <a href="promocoes.html" class="btn-primary">Ver Todas as Promoções</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Sobre Nós -->
+    <section id="sobre" class="sobre-section">
+        <div class="container">
+            <div class="sobre-content">
+                <div class="sobre-text">
+                    <h2 class="section-title">Sobre Nós</h2>
+                    <p>
+                        A <strong>KEN LINE TRAVEL AND TOURS, LDA</strong> é uma empresa especializada em agendamentos de voos, 
+                        dedicada a proporcionar a melhor experiência de viagem aos nossos clientes. 
+                        Com anos de experiência no mercado, oferecemos serviços de qualidade e 
+                        atendimento personalizado.
+                    </p>
+                    <p>
+                        Nossa missão é tornar seus sonhos de viagem realidade, oferecendo as melhores 
+                        opções de voos para destinos nacionais e internacionais. Trabalhamos com as 
+                        principais companhias aéreas para garantir conforto, segurança e os melhores 
+                        preços do mercado.
+                    </p>
+                    <p>
+                        Na KEN LINE, valorizamos cada cliente e nos comprometemos a encontrar a solução 
+                        perfeita para suas necessidades de viagem. Seja para negócios ou lazer, estamos 
+                        aqui para tornar sua jornada inesquecível.
+                    </p>
+                </div>
+                <div class="sobre-image">
+                    <img src="https://images.unsplash.com/photo-1556388158-158ea5ccacbd?w=800&h=600&fit=crop" alt="Equipe KEN LINE TRAVEL AND TOURS">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Serviços -->
+    <section id="servicos" class="servicos-section">
+        <div class="container">
+            <h2 class="section-title">Nossos Serviços</h2>
+            <p class="section-subtitle">Tudo que você precisa para uma viagem perfeita</p>
+            <div class="servicos-grid">
+                <div class="servico-card">
+                    <div class="servico-icon">
+                        <i class="fas fa-passport"></i>
+                    </div>
+                    <h3>Vistos</h3>
+                    <p>Assistência completa na obtenção de vistos para diversos destinos internacionais. Processo simplificado e acompanhamento personalizado.</p>
+                </div>
+                <div class="servico-card">
+                    <div class="servico-icon">
+                        <i class="fas fa-plane-departure"></i>
+                    </div>
+                    <h3>Bilhetes de Voo</h3>
+                    <p>Reserve seus voos nacionais e internacionais com as melhores companhias aéreas do mercado. Os melhores preços garantidos.</p>
+                </div>
+                <div class="servico-card">
+                    <div class="servico-icon">
+                        <i class="fas fa-hotel"></i>
+                    </div>
+                    <h3>Reservas de Hotéis</h3>
+                    <p>Encontre a hospedagem perfeita para sua viagem. Hotéis, apartamentos e resorts com as melhores condições e localizações.</p>
+                </div>
+                <div class="servico-card">
+                    <div class="servico-icon">
+                        <i class="fas fa-suitcase-rolling"></i>
+                    </div>
+                    <h3>Pacotes Turísticos</h3>
+                    <p>Pacotes completos incluindo voo, hospedagem, traslados e atividades para uma experiência completa e inesquecível.</p>
+                </div>
+                <div class="servico-card">
+                    <div class="servico-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Seguro de Viagem</h3>
+                    <p>Proteja sua viagem com seguros completos que cobrem assistência médica, cancelamento e bagagem. Viaje com tranquilidade.</p>
+                </div>
+                <div class="servico-card">
+                    <div class="servico-icon">
+                        <i class="fas fa-shuttle-van"></i>
+                    </div>
+                    <h3>Transfers</h3>
+                    <p>Serviço de traslado do aeroporto para o hotel e vice-versa. Conforto, segurança e pontualidade garantidos.</p>
+                </div>
+                <div class="servico-card">
+                    <div class="servico-icon">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <h3>Rent-A-Car</h3>
+                    <p>Alugue carros nos principais destinos do mundo. Veículos modernos, seguros e com as melhores condições de aluguer.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Contactos -->
+    <section id="contactos" class="contactos-section">
+        <div class="container">
+            <h2 class="section-title">Entre em Contato</h2>
+            <p class="section-subtitle">Estamos aqui para ajudar você</p>
+            <div class="contactos-content">
+                <div class="contactos-info">
+                    <div class="contacto-item">
+                        <div class="contacto-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contacto-details">
+                            <h3>Telefone</h3>
+                            <p>+258 84 981 7240</p>
+                            <p>+258 87 631 7240</p>
+                        </div>
+                    </div>
+                    <div class="contacto-item">
+                        <div class="contacto-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contacto-details">
+                            <h3>Email</h3>
+                            <p>info@kenlinetravel.co.mz</p>
+                        </div>
+                    </div>
+                    <div class="contacto-item">
+                        <div class="contacto-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contacto-details">
+                            <h3>Horário de Atendimento</h3>
+                            <p>Segunda a Sexta: 9h - 18h</p>
+                            <p>Sábado: 9h - 13h</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contactos-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="nome" name="nome" placeholder="Seu Nome" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Seu Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="telefone" name="telefone" placeholder="Seu Telefone">
+                        </div>
+                        <div class="form-group">
+                            <textarea id="mensagem" name="mensagem" rows="5" placeholder="Sua Mensagem" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary">Enviar Mensagem</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="logo.png" alt="KEN LINE TRAVEL AND TOURS" class="footer-logo-img">
+                        <h3>KEN LINE</h3>
+                    </div>
+                    <p>TRAVEL AND TOURS, LDA - Sua empresa de confiança para agendamentos de voos. Transformando sonhos em realidade.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="#inicio">Início</a></li>
+                        <li><a href="#promocoes">Promoções</a></li>
+                        <li><a href="#sobre">Sobre Nós</a></li>
+                        <li><a href="#servicos">Serviços</a></li>
+                        <li><a href="#contactos">Contactos</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Redes Sociais</h4>
+                    <div class="social-links">
+                        <a href="https://web.facebook.com/profile.php?id=100093264398008" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com/kenlinetours" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://wa.me/258849817240" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Localização</h4>
+                    <div class="location-info">
+                        <p><i class="fas fa-map-marker-alt"></i> Avenida Agostinho Neto, Número 1152</p>
+                        <p>Bairro Central - Maputo, Moçambique</p>
+                        <div class="map-container">
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3586.5!2d32.5732!3d-25.9692!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDU4JzA5LjEiUyAzMsKwMzQnMjMuNSJF!5e0!3m2!1spt-PT!2smz!4v1234567890" 
+                                width="100%" 
+                                height="150" 
+                                style="border:0;" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 KEN LINE TRAVEL AND TOURS, LDA. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

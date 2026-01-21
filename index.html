@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="KEN LINE TRAVEL AND TOURS - Agendamentos de Voos. Serviços de qualidade para viagens nacionais e internacionais.">
     <title>KEN LINE TRAVEL AND TOURS - Agendamentos de Voos</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -16,18 +17,28 @@
                 <h1 class="company-name">KEN LINE</h1>
             </div>
             <nav class="main-nav">
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#inicio" class="nav-link" data-translate="nav.home">Início</a></li>
+                    <li><a href="#promocoes" class="nav-link" data-translate="nav.promotions">Promoções</a></li>
+                    <li><a href="#sobre" class="nav-link" data-translate="nav.about">Sobre Nós</a></li>
+                    <li><a href="#servicos" class="nav-link" data-translate="nav.services">Serviços</a></li>
+                    <li><a href="#contactos" class="nav-link" data-translate="nav.contact">Contactos</a></li>
+                </ul>
+                <div class="language-switcher">
+                    <button class="lang-btn" id="langBtn" aria-label="Change language">
+                        <span class="lang-current" id="langCurrent">PT</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="lang-dropdown" id="langDropdown">
+                        <button class="lang-option" data-lang="pt" aria-label="Português">PT</button>
+                        <button class="lang-option" data-lang="en" aria-label="English">EN</button>
+                    </div>
+                </div>
                 <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
                     <span></span>
                     <span></span>
                     <span></span>
                 </button>
-                <ul class="nav-menu" id="navMenu">
-                    <li><a href="#inicio" class="nav-link">Início</a></li>
-                    <li><a href="#promocoes" class="nav-link">Promoções</a></li>
-                    <li><a href="#sobre" class="nav-link">Sobre Nós</a></li>
-                    <li><a href="#servicos" class="nav-link">Serviços</a></li>
-                    <li><a href="#contactos" class="nav-link">Contactos</a></li>
-                </ul>
             </nav>
         </div>
     </header>
@@ -101,22 +112,22 @@
     <!-- Seção Sobre Nós -->
     <section id="sobre" class="sobre-section">
         <div class="container">
+            <h2 class="section-title" data-translate="about.title">Sobre Nós</h2>
             <div class="sobre-content">
                 <div class="sobre-text">
-                    <h2 class="section-title">Sobre Nós</h2>
-                    <p>
+                    <p data-translate="about.intro1">
                         A <strong>KEN LINE TRAVEL AND TOURS, LDA</strong> é uma empresa especializada em agendamentos de voos, 
                         dedicada a proporcionar a melhor experiência de viagem aos nossos clientes. 
                         Com anos de experiência no mercado, oferecemos serviços de qualidade e 
                         atendimento personalizado.
                     </p>
-                    <p>
+                    <p data-translate="about.intro2">
                         Nossa missão é tornar seus sonhos de viagem realidade, oferecendo as melhores 
                         opções de voos para destinos nacionais e internacionais. Trabalhamos com as 
                         principais companhias aéreas para garantir conforto, segurança e os melhores 
                         preços do mercado.
                     </p>
-                    <p>
+                    <p data-translate="about.intro3">
                         Na KEN LINE, valorizamos cada cliente e nos comprometemos a encontrar a solução 
                         perfeita para suas necessidades de viagem. Seja para negócios ou lazer, estamos 
                         aqui para tornar sua jornada inesquecível.
@@ -124,6 +135,49 @@
                 </div>
                 <div class="sobre-image">
                     <img src="https://images.unsplash.com/photo-1556388158-158ea5ccacbd?w=800&h=600&fit=crop" alt="Equipe KEN LINE TRAVEL AND TOURS">
+                </div>
+            </div>
+            <div class="team-section-wrapper">
+                <button class="btn-team-toggle" id="teamToggle" aria-expanded="false" aria-controls="teamSection">
+                    <span data-translate="about.viewTeam">Ver nossa equipa</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="team-section" id="teamSection" aria-hidden="true">
+                    <h3 class="team-title" data-translate="about.teamTitle">A Nossa Equipa</h3>
+                    <div class="team-grid">
+                        <div class="team-member">
+                            <div class="team-photo">
+                                <img src="https://ui-avatars.com/api/?name=Team+Member+1&size=200&background=0066cc&color=fff" alt="Team Member 1">
+                            </div>
+                            <h4 class="team-name" data-translate="about.team1.name">João Silva</h4>
+                            <p class="team-role" data-translate="about.team1.role">Diretor de Operações</p>
+                            <p class="team-desc" data-translate="about.team1.desc">Responsável pela coordenação de voos e gestão de reservas. Garante a eficiência operacional e a satisfação dos clientes.</p>
+                        </div>
+                        <div class="team-member">
+                            <div class="team-photo">
+                                <img src="https://ui-avatars.com/api/?name=Team+Member+2&size=200&background=0066cc&color=fff" alt="Team Member 2">
+                            </div>
+                            <h4 class="team-name" data-translate="about.team2.name">Maria Santos</h4>
+                            <p class="team-role" data-translate="about.team2.role">Gerente de Atendimento ao Cliente</p>
+                            <p class="team-desc" data-translate="about.team2.desc">Lidera a equipa de atendimento, assegurando suporte personalizado e soluções adaptadas às necessidades de cada cliente.</p>
+                        </div>
+                        <div class="team-member">
+                            <div class="team-photo">
+                                <img src="https://ui-avatars.com/api/?name=Team+Member+3&size=200&background=0066cc&color=fff" alt="Team Member 3">
+                            </div>
+                            <h4 class="team-name" data-translate="about.team3.name">Carlos Mendes</h4>
+                            <p class="team-role" data-translate="about.team3.role">Especialista em Viagens Internacionais</p>
+                            <p class="team-desc" data-translate="about.team3.desc">Especializado em destinos internacionais, vistos e documentação. Fornece consultoria completa para viagens globais.</p>
+                        </div>
+                        <div class="team-member">
+                            <div class="team-photo">
+                                <img src="https://ui-avatars.com/api/?name=Team+Member+4&size=200&background=0066cc&color=fff" alt="Team Member 4">
+                            </div>
+                            <h4 class="team-name" data-translate="about.team4.name">Ana Costa</h4>
+                            <p class="team-role" data-translate="about.team4.role">Coordenadora de Pacotes Turísticos</p>
+                            <p class="team-desc" data-translate="about.team4.desc">Desenvolve e coordena pacotes turísticos completos, integrando voos, hospedagem e atividades para experiências memoráveis.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -134,6 +188,19 @@
         <div class="container">
             <h2 class="section-title">Nossos Serviços</h2>
             <p class="section-subtitle">Tudo que você precisa para uma viagem perfeita</p>
+
+            <div class="servico-featured">
+                <div class="servico-featured-icon">
+                    <i class="fas fa-car"></i>
+                </div>
+                <div class="servico-featured-content">
+                    <p class="servico-featured-badge">Destaque</p>
+                    <h3>Rent-A-Car Premium</h3>
+                    <p>Alugue veículos modernos e seguros nos principais destinos, com condições flexíveis e suporte dedicado para cada etapa da sua viagem.</p>
+                    <a class="btn-primary btn-featured" href="#contactos">Saiba mais</a>
+                </div>
+            </div>
+
             <div class="servicos-grid">
                 <div class="servico-card">
                     <div class="servico-icon">
@@ -177,13 +244,6 @@
                     <h3>Transfers</h3>
                     <p>Serviço de traslado do aeroporto para o hotel e vice-versa. Conforto, segurança e pontualidade garantidos.</p>
                 </div>
-                <div class="servico-card">
-                    <div class="servico-icon">
-                        <i class="fas fa-car"></i>
-                    </div>
-                    <h3>Rent-A-Car</h3>
-                    <p>Alugue carros nos principais destinos do mundo. Veículos modernos, seguros e com as melhores condições de aluguer.</p>
-                </div>
             </div>
         </div>
     </section>
@@ -191,16 +251,26 @@
     <!-- Seção Contactos -->
     <section id="contactos" class="contactos-section">
         <div class="container">
-            <h2 class="section-title">Entre em Contato</h2>
-            <p class="section-subtitle">Estamos aqui para ajudar você</p>
+            <h2 class="section-title" data-translate="contact.title">Entre em Contacto</h2>
+            <p class="section-subtitle" data-translate="contact.subtitle">Estamos aqui para ajudar você</p>
             <div class="contactos-content">
                 <div class="contactos-info">
+                    <div class="contacto-item">
+                        <div class="contacto-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contacto-details">
+                            <h3 data-translate="contact.address.title">Endereço</h3>
+                            <p data-translate="contact.address.line1">Avenida Agostinho Neto, Número 1152</p>
+                            <p data-translate="contact.address.line2">Bairro Central - Maputo, Moçambique</p>
+                        </div>
+                    </div>
                     <div class="contacto-item">
                         <div class="contacto-icon">
                             <i class="fas fa-phone"></i>
                         </div>
                         <div class="contacto-details">
-                            <h3>Telefone</h3>
+                            <h3 data-translate="contact.phone.title">Telefone</h3>
                             <p>+258 84 981 7240</p>
                             <p>+258 87 631 7240</p>
                         </div>
@@ -210,7 +280,7 @@
                             <i class="fas fa-envelope"></i>
                         </div>
                         <div class="contacto-details">
-                            <h3>Email</h3>
+                            <h3 data-translate="contact.email.title">Email</h3>
                             <p>info@kenlinetravel.co.mz</p>
                         </div>
                     </div>
@@ -219,27 +289,27 @@
                             <i class="fas fa-clock"></i>
                         </div>
                         <div class="contacto-details">
-                            <h3>Horário de Atendimento</h3>
-                            <p>Segunda a Sexta: 9h - 18h</p>
-                            <p>Sábado: 9h - 13h</p>
+                            <h3 data-translate="contact.hours.title">Horário de Atendimento</h3>
+                            <p data-translate="contact.hours.weekdays">Segunda a Sexta: 9h - 18h</p>
+                            <p data-translate="contact.hours.saturday">Sábado: 9h - 13h</p>
                         </div>
                     </div>
                 </div>
                 <div class="contactos-form">
                     <form id="contactForm">
                         <div class="form-group">
-                            <input type="text" id="nome" name="nome" placeholder="Seu Nome" required>
+                            <input type="text" id="nome" name="nome" data-translate-placeholder="contact.form.name" placeholder="Seu Nome" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" id="email" name="email" placeholder="Seu Email" required>
+                            <input type="email" id="email" name="email" data-translate-placeholder="contact.form.email" placeholder="Seu Email" required>
                         </div>
                         <div class="form-group">
-                            <input type="tel" id="telefone" name="telefone" placeholder="Seu Telefone">
+                            <input type="text" id="assunto" name="assunto" data-translate-placeholder="contact.form.subject" placeholder="Assunto" required>
                         </div>
                         <div class="form-group">
-                            <textarea id="mensagem" name="mensagem" rows="5" placeholder="Sua Mensagem" required></textarea>
+                            <textarea id="mensagem" name="mensagem" rows="5" data-translate-placeholder="contact.form.message" placeholder="Sua Mensagem" required></textarea>
                         </div>
-                        <button type="submit" class="btn-primary">Enviar Mensagem</button>
+                        <button type="submit" class="btn-primary" data-translate="contact.form.submit">Enviar Mensagem</button>
                     </form>
                 </div>
             </div>

@@ -232,27 +232,31 @@ if (contactForm) {
         
         const nome = document.getElementById('nome').value;
         const email = document.getElementById('email').value;
-        const telefone = document.getElementById('telefone').value;
+        const assunto = document.getElementById('assunto').value;
         const mensagem = document.getElementById('mensagem').value;
 
         // Preparar o corpo do email
-        const assunto = encodeURIComponent('Nova Mensagem do Site KEN LINE TRAVEL AND TOURS');
+        const assuntoEmail = encodeURIComponent(`Nova Mensagem do Site KEN LINE TRAVEL AND TOURS: ${assunto}`);
         const corpo = encodeURIComponent(
             `Nome: ${nome}\n` +
             `Email: ${email}\n` +
-            `Telefone: ${telefone || 'Não informado'}\n\n` +
+            `Assunto: ${assunto}\n\n` +
             `Mensagem:\n${mensagem}`
         );
 
-        // Criar link mailto para enviar o email para jalanefortunato@gmail.com
-        const mailtoLink = `mailto:jalanefortunato@gmail.com?subject=${assunto}&body=${corpo}`;
+        // Criar link mailto para enviar o email
+        const mailtoLink = `mailto:info@kenlinetravel.co.mz?subject=${assuntoEmail}&body=${corpo}`;
         
         // Abrir cliente de email padrão
         window.location.href = mailtoLink;
         
         // Feedback visual
         setTimeout(() => {
-            alert('Obrigado pela sua mensagem!\n\nO seu cliente de email será aberto para enviar a mensagem para:\njalanefortunato@gmail.com\n\nPor favor, confirme o envio.');
+            const currentLang = localStorage.getItem('language') || 'pt';
+            const message = currentLang === 'en' 
+                ? 'Thank you for your message!\n\nYour email client will open to send the message.\n\nPlease confirm sending.'
+                : 'Obrigado pela sua mensagem!\n\nO seu cliente de email será aberto para enviar a mensagem.\n\nPor favor, confirme o envio.';
+            alert(message);
             contactForm.reset();
         }, 100);
     });
@@ -289,7 +293,7 @@ const observer = new IntersectionObserver((entries) => {
 
 // Observar elementos para animação
 document.addEventListener('DOMContentLoaded', () => {
-    const animateElements = document.querySelectorAll('.servico-card, .promocao-card, .sobre-content, .contactos-content');
+    const animateElements = document.querySelectorAll('.servico-featured, .servico-card, .promocao-card, .sobre-content, .contactos-content, .contacto-item, .team-member');
     animateElements.forEach(el => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(20px)';
@@ -298,3 +302,270 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+// ============================================
+// LANGUAGE SWITCHER FUNCTIONALITY
+// ============================================
+
+const translations = {
+    pt: {
+        nav: {
+            home: 'Início',
+            promotions: 'Promoções',
+            about: 'Sobre Nós',
+            services: 'Serviços',
+            contact: 'Contactos'
+        },
+        about: {
+            title: 'Sobre Nós',
+            intro1: 'A <strong>KEN LINE TRAVEL AND TOURS, LDA</strong> é uma empresa especializada em agendamentos de voos, dedicada a proporcionar a melhor experiência de viagem aos nossos clientes. Com anos de experiência no mercado, oferecemos serviços de qualidade e atendimento personalizado.',
+            intro2: 'Nossa missão é tornar seus sonhos de viagem realidade, oferecendo as melhores opções de voos para destinos nacionais e internacionais. Trabalhamos com as principais companhias aéreas para garantir conforto, segurança e os melhores preços do mercado.',
+            intro3: 'Na KEN LINE, valorizamos cada cliente e nos comprometemos a encontrar a solução perfeita para suas necessidades de viagem. Seja para negócios ou lazer, estamos aqui para tornar sua jornada inesquecível.',
+            viewTeam: 'Ver nossa equipa',
+            teamTitle: 'A Nossa Equipa',
+            team1: {
+                name: 'João Silva',
+                role: 'Diretor de Operações',
+                desc: 'Responsável pela coordenação de voos e gestão de reservas. Garante a eficiência operacional e a satisfação dos clientes.'
+            },
+            team2: {
+                name: 'Maria Santos',
+                role: 'Gerente de Atendimento ao Cliente',
+                desc: 'Lidera a equipa de atendimento, assegurando suporte personalizado e soluções adaptadas às necessidades de cada cliente.'
+            },
+            team3: {
+                name: 'Carlos Mendes',
+                role: 'Especialista em Viagens Internacionais',
+                desc: 'Especializado em destinos internacionais, vistos e documentação. Fornece consultoria completa para viagens globais.'
+            },
+            team4: {
+                name: 'Ana Costa',
+                role: 'Coordenadora de Pacotes Turísticos',
+                desc: 'Desenvolve e coordena pacotes turísticos completos, integrando voos, hospedagem e atividades para experiências memoráveis.'
+            }
+        },
+        contact: {
+            title: 'Entre em Contato',
+            subtitle: 'Estamos aqui para ajudar você',
+            address: {
+                title: 'Endereço',
+                line1: 'Avenida Agostinho Neto, Número 1152',
+                line2: 'Bairro Central - Maputo, Moçambique'
+            },
+            phone: {
+                title: 'Telefone'
+            },
+            email: {
+                title: 'Email'
+            },
+            hours: {
+                title: 'Horário de Atendimento',
+                weekdays: 'Segunda a Sexta: 9h - 18h',
+                saturday: 'Sábado: 9h - 13h'
+            },
+            form: {
+                name: 'Seu Nome',
+                email: 'Seu Email',
+                subject: 'Assunto',
+                message: 'Sua Mensagem',
+                submit: 'Enviar Mensagem'
+            }
+        }
+    },
+    en: {
+        nav: {
+            home: 'Home',
+            promotions: 'Promotions',
+            about: 'About Us',
+            services: 'Services',
+            contact: 'Contact'
+        },
+        about: {
+            title: 'About Us',
+            intro1: '<strong>KEN LINE TRAVEL AND TOURS, LDA</strong> is a company specialized in flight bookings, dedicated to providing the best travel experience to our clients. With years of market experience, we offer quality services and personalized assistance.',
+            intro2: 'Our mission is to make your travel dreams come true, offering the best flight options for national and international destinations. We work with the main airlines to guarantee comfort, security and the best market prices.',
+            intro3: 'At KEN LINE, we value each client and commit to finding the perfect solution for your travel needs. Whether for business or leisure, we are here to make your journey unforgettable.',
+            viewTeam: 'View our team',
+            teamTitle: 'Our Team',
+            team1: {
+                name: 'John Silva',
+                role: 'Operations Director',
+                desc: 'Responsible for flight coordination and reservation management. Ensures operational efficiency and customer satisfaction.'
+            },
+            team2: {
+                name: 'Maria Santos',
+                role: 'Customer Service Manager',
+                desc: 'Leads the customer service team, ensuring personalized support and solutions tailored to each client\'s needs.'
+            },
+            team3: {
+                name: 'Carlos Mendes',
+                role: 'International Travel Specialist',
+                desc: 'Specialized in international destinations, visas and documentation. Provides comprehensive consulting for global travel.'
+            },
+            team4: {
+                name: 'Ana Costa',
+                role: 'Tour Package Coordinator',
+                desc: 'Develops and coordinates complete tour packages, integrating flights, accommodation and activities for memorable experiences.'
+            }
+        },
+        contact: {
+            title: 'Contact Us',
+            subtitle: 'We are here to help you',
+            address: {
+                title: 'Address',
+                line1: 'Avenida Agostinho Neto, Number 1152',
+                line2: 'Central Neighborhood - Maputo, Mozambique'
+            },
+            phone: {
+                title: 'Phone'
+            },
+            email: {
+                title: 'Email'
+            },
+            hours: {
+                title: 'Business Hours',
+                weekdays: 'Monday to Friday: 9am - 6pm',
+                saturday: 'Saturday: 9am - 1pm'
+            },
+            form: {
+                name: 'Your Name',
+                email: 'Your Email',
+                subject: 'Subject',
+                message: 'Your Message',
+                submit: 'Send Message'
+            }
+        }
+    }
+};
+
+// Language management
+let currentLanguage = localStorage.getItem('language') || 'pt';
+
+function setLanguage(lang) {
+    currentLanguage = lang;
+    localStorage.setItem('language', lang);
+    document.documentElement.lang = lang === 'en' ? 'en' : 'pt-PT';
+    translatePage();
+    updateLanguageButton();
+}
+
+function updateLanguageButton() {
+    const langCurrent = document.getElementById('langCurrent');
+    if (langCurrent) {
+        langCurrent.textContent = currentLanguage.toUpperCase();
+    }
+}
+
+function translatePage() {
+    const elements = document.querySelectorAll('[data-translate]');
+    elements.forEach(element => {
+        const key = element.getAttribute('data-translate');
+        const keys = key.split('.');
+        let translation = translations[currentLanguage];
+        
+        for (const k of keys) {
+            if (translation && translation[k]) {
+                translation = translation[k];
+            } else {
+                translation = null;
+                break;
+            }
+        }
+        
+        if (translation && typeof translation === 'string') {
+            element.textContent = translation;
+            // Preserve HTML if needed (for strong tags)
+            if (translation.includes('<strong>')) {
+                element.innerHTML = translation;
+            }
+        }
+    });
+    
+    // Handle placeholders
+    const placeholderElements = document.querySelectorAll('[data-translate-placeholder]');
+    placeholderElements.forEach(element => {
+        const key = element.getAttribute('data-translate-placeholder');
+        const keys = key.split('.');
+        let translation = translations[currentLanguage];
+        
+        for (const k of keys) {
+            if (translation && translation[k]) {
+                translation = translation[k];
+            } else {
+                translation = null;
+                break;
+            }
+        }
+        
+        if (translation) {
+            element.placeholder = translation;
+        }
+    });
+}
+
+// Language switcher UI
+document.addEventListener('DOMContentLoaded', () => {
+    const langBtn = document.getElementById('langBtn');
+    const langDropdown = document.getElementById('langDropdown');
+    const langOptions = document.querySelectorAll('.lang-option');
+    
+    updateLanguageButton();
+    translatePage();
+    
+    if (langBtn && langDropdown) {
+        langBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            langDropdown.classList.toggle('active');
+        });
+        
+        langOptions.forEach(option => {
+            option.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const lang = option.getAttribute('data-lang');
+                setLanguage(lang);
+                langDropdown.classList.remove('active');
+            });
+        });
+        
+        document.addEventListener('click', () => {
+            langDropdown.classList.remove('active');
+        });
+    }
+});
+
+// ============================================
+// TEAM EXPAND/COLLAPSE FUNCTIONALITY
+// ============================================
+
+document.addEventListener('DOMContentLoaded', () => {
+    const teamToggle = document.getElementById('teamToggle');
+    const teamSection = document.getElementById('teamSection');
+    
+    if (teamToggle && teamSection) {
+        teamToggle.addEventListener('click', () => {
+            const isExpanded = teamSection.classList.contains('expanded');
+            const icon = teamToggle.querySelector('i');
+            
+            if (isExpanded) {
+                // Collapse
+                teamSection.classList.remove('expanded');
+                teamToggle.setAttribute('aria-expanded', 'false');
+                teamSection.setAttribute('aria-hidden', 'true');
+                if (icon) icon.style.transform = 'rotate(0deg)';
+            } else {
+                // Expand
+                teamSection.classList.add('expanded');
+                teamToggle.setAttribute('aria-expanded', 'true');
+                teamSection.setAttribute('aria-hidden', 'false');
+                if (icon) icon.style.transform = 'rotate(180deg)';
+            }
+        });
+        
+        // Keyboard accessibility
+        teamToggle.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                teamToggle.click();
+            }
+        });
+    }
+});
